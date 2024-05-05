@@ -1,4 +1,4 @@
-name: NodeJS with Webpack
+name: 打包部署工作流
 
 on:
   push:
@@ -24,5 +24,5 @@ jobs:
 
     - name: Build
       run: |
-        pnpm install
-        pnpm run build
+        npm install
+        npm run build
