@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ "deploy" ]
 
+permissions:
+  contents: write
+
 jobs:
   npm-build:
     runs-on: ubuntu-latest
