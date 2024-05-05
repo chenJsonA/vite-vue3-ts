@@ -25,5 +25,5 @@ jobs:
       uses: docker/build-push-action@v5
       with: 
         push: true
-        tags: chenJsonA/vite-vue3-ts:latest
+        tags: chenjsona/vitevue3ts:latest
 
