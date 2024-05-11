@@ -1,4 +1,1 @@
-# Skipping Git Hooks
-# git commit -m "..." -n
-# echo "npm test"
-# npm run commitlint
+pnpm exec lint-staged
