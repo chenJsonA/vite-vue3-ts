@@ -2,9 +2,9 @@ name: 打包部署工作流
 
 on:
   push:
-    branches: [ "deploy" ]
+    branches: ['deploy']
   pull_request:
-    branches: [ "deploy" ]
+    branches: ['deploy']
 
 permissions:
   contents: write
@@ -18,21 +18,21 @@ jobs:
         node-version: [16.x, 18.x]
 
     steps:
-    - name: 读取仓库内容
-      uses: actions/checkout@v4
+      - name: 读取仓库内容
+        uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: 安装依赖和项目打包
-      run: |
-        npm install
-        npm run build
+      - name: 安装依赖和项目打包
+        run: |
+          npm install
+          npm run build
 
-    - name: 部署到github-pages上
-      uses: JamesIves/github-pages-deploy-action@v4
-      with: 
-        branch: gh-pages
-        folder: build
+      - name: 部署到github-pages上
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: build
